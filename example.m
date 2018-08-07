@@ -13,25 +13,17 @@ X = rand(N, n);
 Y = rand(N, m);
 [R, r, C, Q_NX, Q_ND] = coranking(X, Y);
 
-% plot Q_NX
-figure
-plot(1:N, Q_NX(1:N));
-title('Q_{NX}(K)');
-xlabel('K', 'FontSize', 12); ylabel('Q_{NX}(K)', 'FontSize', 12);
+%% Example 2 (MNIST, t-SNE)
+load('./example2_tpSNE/MNIST_tSNE_N6000.mat')  % load real dimension reduction map
+[R, r, C, Q_NX, Q_ND] = coranking(X, Y);
 
-% plot Q_ND
-figure
-imagesc(Q_ND);
-colormap('hot'); colorbar;
-title('Q_{ND}(K_s, K_t)');
-xlabel('K_t', 'FontSize', 12); ylabel('K_s', 'FontSize', 12);
-
-%% Example 2
+%% Example 3 (MNIST, p-SNE)
 load('./example2_tpSNE/MNIST_tSNE_N6000.mat')  % load real dimension reduction map
 [R, r, C, Q_NX, Q_ND] = coranking(X, Y);
 
 % plot Q_NX
 figure
+N = size(X, 1);    % sample size
 plot(1:N, Q_NX(1:N));
 title('Q_{NX}(K)');
 xlabel('K', 'FontSize', 12); ylabel('Q_{NX}(K)', 'FontSize', 12);
