@@ -9,7 +9,7 @@ Assessing quality of dimensionality reduction by coranking matrix based method. 
 ### Usage
 1. Add file `coranking.m` into Matlab search path
 
-2. Enter original data **X** and dimensionality reduced map **Y**, then function `coranking` computes:
+2. Enter original data **X** and dimensionality reduced map **Y** with samples on the rows, and features on the columns. Then function `coranking` computes:
    - Ranking matrix **R** of X,
    - Ranking matrix **r** of Y,
    - Coranking matrix **C** based on **R, r**,
